@@ -12,6 +12,63 @@
     .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
     footer { background: #111827; color: white; text-align: center; padding: 20px; }
     .btn { background: white; color: #1e40af; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+    form {
+  max-width: 600px;
+  margin: 30px auto 0;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  margin-bottom: 16px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+form button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
   </style>
 </head>
 <body>
@@ -46,29 +103,30 @@
 
   <form action="https://www.cognitoforms.com/AzolaTsholoba/ClientRequestForm" method="POST" class="card">
     
-    <label>Full Name</label><br>
-    <input type="text" name="name" required><br><br>
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-    <label>Email Address</label><br>
-    <input type="email" name="email" required><br><br>
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-    <label>WhatsApp Number</label><br>
-    <input type="text" name="phone" required><br><br>
+  <label for="phone">WhatsApp Number</label>
+  <input type="text" id="phone" name="phone" placeholder="+27 71 234 5678" required>
 
-    <label>Service Needed</label><br>
-    <select name="service" required>
-      <option value="">Select a service</option>
-      <option>CV / Resume Design</option>
-      <option>Online Portfolio</option>
-      <option>Posters / Advertisements</option>
-      <option>Full Branding Package</option>
-    </select><br><br>
+  <label for="service">Service Needed</label>
+  <select id="service" name="service" required>
+    <option value="">Select a service</option>
+    <option>CV / Resume Design</option>
+    <option>Online Portfolio</option>
+    <option>Posters / Advertisements</option>
+    <option>Full Branding Package</option>
+  </select>
 
-    <label>Message / Requirements</label><br>
-    <textarea name="message" rows="4" required></textarea><br><br>
+  <label for="message">Message / Requirements</label>
+  <textarea id="message" name="message" rows="4" placeholder="Tell me more about what you need..." required></textarea>
 
-    <button type="submit" class="btn">Submit Request</button>
-  </form>
+  <button type="submit">Submit Request</button>
+
+</form>
 </section>
 
 <footer>
